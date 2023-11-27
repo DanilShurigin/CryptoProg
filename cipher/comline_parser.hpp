@@ -11,14 +11,18 @@ class ComLineParser {
     po::options_description descr_;
     po::variables_map vm_;
 
+    std::string defInputFilePath = "data/input.txt";
+    std::string defOutputFilePath = "data/output.txt";
+
     std::string input_file_path_;
     std::string output_file_path_;
+    std::string password_;
+    bool encode_ = false;
+    bool decode_ = false;
   public:
     ComLineParser() = delete;
     ComLineParser(int argc, char** argv);
 
     void verifyInput();
-    std::pair< std::string, std::string > get_file_pathes(){
-      return std::make_pair(input_file_path_, output_file_path_);
-    }
+    void operator()();
 };

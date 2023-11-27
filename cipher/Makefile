@@ -4,7 +4,7 @@ PROJECT = cipher.exec
 
 CXX=g++
 CXXFLAGS=-O2 -Wall -DNDEBUG -std=c++17
-LDFLAGS= -lcrypto++
+LDFLAGS= -lcrypto++ -lboost_program_options
 
 SOURCES := $(wildcard *.cpp)
 HEADERS := $(wildcard *.h)

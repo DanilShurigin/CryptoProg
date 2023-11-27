@@ -4,10 +4,14 @@
 
 class Coder {
   private:
+    std::string input_file_path_;
+    std::string output_file_path_;
+    std::string password_;
     
   public:
-    Coder();
+    Coder(const std::string &inp_file, const std::string &out_file, const std::string &pass):
+          input_file_path_(inp_file), output_file_path_(out_file), password_(pass) {};
 
-    std::string encode();
-    std::string decode();
+    void encode();
+    void decode();
 };
